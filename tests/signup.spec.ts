@@ -19,7 +19,8 @@ test('Create a new user account', async ({ page }) => {
   await page.getByPlaceholder('Name').fill(uniqueName);
   await page.getByPlaceholder('Email').fill(uniqueEmail);
   await page.getByPlaceholder('Password').fill(userPassword);
-  await page.getByLabel('Playwright').click();
+  //select the first interest from avaliable options
+  await page.locator('.interests-div .interest-div').nth(0).click();
   await page.locator('#state').selectOption('Arunachal Pradesh');
   await page.locator('#hobbies').selectOption('Swimming');
 
